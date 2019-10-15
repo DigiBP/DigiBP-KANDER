@@ -193,6 +193,10 @@
         <bpmn:text>verify cv's, match with job requirements</bpmn:text>
       </bpmn:textAnnotation>
       <bpmn:association id="Association_1g0rx8a" sourceRef="Task_0a8zqkk" targetRef="TextAnnotation_13dnf5r" />
+      <bpmn:textAnnotation id="TextAnnotation_1rsrwuy">
+        <bpmn:text>Conversational AI?</bpmn:text>
+      </bpmn:textAnnotation>
+      <bpmn:association id="Association_16fptmg" sourceRef="Task_1sd1jm2" targetRef="TextAnnotation_1rsrwuy" />
     </bpmn:subProcess>
     <bpmn:sequenceFlow id="SequenceFlow_1t24iuu" sourceRef="Task_1xa0lvc" targetRef="ExclusiveGateway_14fedny" />
     <bpmn:exclusiveGateway id="ExclusiveGateway_1252q8w" name="Budget?">
@@ -1191,6 +1195,13 @@
       <bpmndi:BPMNEdge id="Association_0w2f1qk_di" bpmnElement="Association_0w2f1qk" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
         <di:waypoint x="1179" y="255" />
         <di:waypoint x="1285" y="119" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1rsrwuy_di" bpmnElement="TextAnnotation_1rsrwuy" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <dc:Bounds x="1050" y="480" width="100" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_16fptmg_di" bpmnElement="Association_16fptmg" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <di:waypoint x="1105" y="550" />
+        <di:waypoint x="1102" y="520" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
