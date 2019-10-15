@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0r5dzuy" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
+  <decision id="Decision_0kqowkf" name="Decision HR">
+    <extensionElements>
+      <biodi:bounds x="157" y="81" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Title of Position">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Title of Position</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0ses18i">
+          <text>"Administration","Accounting"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1kadzvi" label="Percentage">
+        <inputExpression id="LiteralExpression_0rtxh72" typeRef="double">
+          <text>Percentage</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="string">
+        <outputValues id="UnaryTests_08rpvmp">
+          <text>"Declined","Approved"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1ib31l7">
+        <inputEntry id="UnaryTests_0n3qkcs">
+          <text>"Administration"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_114ka4x">
+          <text>&lt;= 0.4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02gblj0">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1h851gx">
+        <inputEntry id="UnaryTests_0jjjc7t">
+          <text>"Accounting"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14xw2jh">
+          <text>&lt;= 0.4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13r0dkj">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_008ufs9">
+        <inputEntry id="UnaryTests_03bpb8a">
+          <text>"Administration","Accounting"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c6dmuj">
+          <text>&gt; 0.4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e6u11s">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07oitn1">
+        <inputEntry id="UnaryTests_06cwxl0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1incjr5">
+          <text>&gt; 0.4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yfqexh">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_00iz8vu" name="Decide how to advertise">
+    <extensionElements>
+      <biodi:bounds x="405" y="83" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0scbk15">
+      <input id="InputClause_0q9h4jq" label="Publication Platform">
+        <inputExpression id="LiteralExpression_0ah3y21" typeRef="string">
+          <text>Publication Platform</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1x7zaks">
+          <text>"LinkedIn","Company Website","Jobscout","Newspaper"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0c1fl1b" label="Publications in weeks">
+        <inputExpression id="LiteralExpression_1gdylk7" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1wr1uz9" typeRef="string" />
+      <rule id="DecisionRule_0smpf6y">
+        <inputEntry id="UnaryTests_1b47vjt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ddds5v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c4efzt">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xq9kcm">
+        <inputEntry id="UnaryTests_1nsn3dn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z7d82r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zgqqja">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j6c7c4">
+        <inputEntry id="UnaryTests_18n4cjb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0im8n2n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j4hyw7">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lct4rb">
+        <inputEntry id="UnaryTests_1f53rjp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gupi76">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f8v476">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_19293i5" name="Data evaluation">
+    <extensionElements>
+      <biodi:bounds x="649" y="82" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_15qf5ha">
+      <input id="InputClause_0h8p7gr">
+        <inputExpression id="LiteralExpression_1qh8y1d" typeRef="string" />
+      </input>
+      <output id="OutputClause_0g5ul83" typeRef="string" />
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0zwmp49" name="Prepare Interview">
+    <extensionElements>
+      <biodi:bounds x="152" y="216" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0kp0c13">
+      <input id="InputClause_1ve9hx8">
+        <inputExpression id="LiteralExpression_1v7fm34" typeRef="string" />
+      </input>
+      <output id="OutputClause_0hnb9w4" typeRef="string" />
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1qk17y7" name="Define contract negotiator">
+    <extensionElements>
+      <biodi:bounds x="405" y="215" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1shx0di">
+      <input id="InputClause_1gmby9y">
+        <inputExpression id="LiteralExpression_14uqp9b" typeRef="string" />
+      </input>
+      <output id="OutputClause_0lt102y" typeRef="string" />
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1x0v2qh" name="Evaluate agreement">
+    <extensionElements>
+      <biodi:bounds x="655" y="210" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_1a4fsa0">
+      <input id="InputClause_1awgawu">
+        <inputExpression id="LiteralExpression_0xpxhe7" typeRef="string" />
+      </input>
+      <output id="OutputClause_1e4edti" typeRef="string" />
+    </decisionTable>
+  </decision>
+</definitions>
