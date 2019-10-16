@@ -74,61 +74,184 @@
       <biodi:bounds x="405" y="83" width="180" height="80" />
     </extensionElements>
     <decisionTable id="DecisionTable_0scbk15">
-      <input id="InputClause_0q9h4jq" label="Publication Platform">
+      <input id="InputClause_0q9h4jq" label="Level of Hierarchy">
         <inputExpression id="LiteralExpression_0ah3y21" typeRef="string">
-          <text>Publication Platform</text>
+          <text>Level of Hierarchy</text>
         </inputExpression>
         <inputValues id="UnaryTests_1x7zaks">
-          <text>"LinkedIn","Company Website","Jobscout","Newspaper"</text>
+          <text>"Trainee","Staff","Project Leader","Team Leader","Head of Department","CEO","Board of directors"</text>
         </inputValues>
       </input>
-      <input id="InputClause_0c1fl1b" label="Publications in weeks">
-        <inputExpression id="LiteralExpression_1gdylk7" typeRef="string">
-          <text></text>
-        </inputExpression>
-      </input>
-      <output id="OutputClause_1wr1uz9" typeRef="string" />
+      <output id="OutputClause_1wr1uz9" label="Website" name="Website" typeRef="string">
+        <outputValues id="UnaryTests_0l44l0b">
+          <text>"Publish on Website","Don't publish on Website"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0nn5es5" label="LinkedIn" name="LinkedIn" typeRef="string">
+        <outputValues id="UnaryTests_1n9gg3k">
+          <text>"Publish on LinkedIn","Don't publish on LinkedIn"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0e47kqw" label="Job Plattforms" name="Job Plattforms" typeRef="string">
+        <outputValues id="UnaryTests_1s5yck8">
+          <text>"Publish on job plattforms","Don't publish on job plattforms"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0zadv5c" label="Designated journals" name="Designated journals" typeRef="string">
+        <outputValues id="UnaryTests_0a7m4zz">
+          <text>"Publish in journals","Don't publish in journals"</text>
+        </outputValues>
+      </output>
       <rule id="DecisionRule_0smpf6y">
         <inputEntry id="UnaryTests_1b47vjt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ddds5v">
-          <text></text>
+          <text>"Trainee"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1c4efzt">
-          <text></text>
+          <text>"Publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p44wov">
+          <text>"Don't publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xsojh6">
+          <text>"Don't publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h6gb25">
+          <text>"Don't publish in journals"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1xq9kcm">
         <inputEntry id="UnaryTests_1nsn3dn">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0z7d82r">
-          <text></text>
+          <text>"Staff"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zgqqja">
-          <text></text>
+          <text>"Publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17mldgm">
+          <text>"Publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lnxke7">
+          <text>"Publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bwhdsk">
+          <text>"Don't publish in journals"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1j6c7c4">
         <inputEntry id="UnaryTests_18n4cjb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0im8n2n">
-          <text></text>
+          <text>"Project Leader"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0j4hyw7">
-          <text></text>
+          <text>"Publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c5cyil">
+          <text>"Publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ith7oy">
+          <text>"Publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v03v4b">
+          <text>"Don't publish in journals"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0lct4rb">
         <inputEntry id="UnaryTests_1f53rjp">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1gupi76">
-          <text></text>
+          <text>"Team Leader"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f8v476">
+          <text>"Publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kx45pm">
+          <text>"Publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13fvhgn">
+          <text>"Publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ec9lzi">
+          <text>"Don't publish in journals"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13926nq">
+        <inputEntry id="UnaryTests_019qzoy">
+          <text>"Head of Department"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11eu98n">
+          <text>"Don't publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yuphhr">
+          <text>"Publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b57afo">
+          <text>"Publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cuz7z7">
+          <text>"Publish in journals"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dmmdin">
+        <inputEntry id="UnaryTests_1qxqh9q">
+          <text>"CEO"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0oz2cww">
+          <text>"Don't publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lp22xr">
+          <text>"Don't publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ko8gvl">
+          <text>"Publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xxpvtu">
+          <text>"Publish in journals"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0omqgnu">
+        <inputEntry id="UnaryTests_1ld3tu3">
+          <text>"Board of directors"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ws0mdz">
+          <text>"Don't publish on Website"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sf0stm">
+          <text>"Don't publish on LinkedIn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_112unsl">
+          <text>"Don't publish on job plattforms"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xkyjzh">
+          <text>"Publish in journals"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hzii1l">
+        <inputEntry id="UnaryTests_1hho7vm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qpsou3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q4vpfs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hih6i8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lflr6q">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07kxog0">
+        <inputEntry id="UnaryTests_09kynb3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_108orpe">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vuq1st">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w6iiw8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tqokdn">
           <text></text>
         </outputEntry>
       </rule>
@@ -150,13 +273,13 @@
       <biodi:bounds x="152" y="216" width="180" height="80" />
     </extensionElements>
     <decisionTable id="DecisionTable_0kp0c13">
-      <input id="InputClause_1ve9hx8">
+      <input id="InputClause_1ve9hx8" label="Level of Hierarchy">
         <inputExpression id="LiteralExpression_1v7fm34" typeRef="string" />
         <inputValues id="UnaryTests_0x1zvoe">
           <text>"Trainee","Staff","Project Leader","Team Leader","Head of Department","CEO","Board of directors"</text>
         </inputValues>
       </input>
-      <output id="OutputClause_0hnb9w4" typeRef="string">
+      <output id="OutputClause_0hnb9w4" label="Interviewer" typeRef="string">
         <outputValues id="UnaryTests_0mn2wr9">
           <text>"Project Leader + HR","Team Leader + HR","Head of Department + HR","CEO + HR","2 members of the board of directors + HR","All members of the board of directors"</text>
         </outputValues>
@@ -224,10 +347,73 @@
       <biodi:bounds x="405" y="215" width="180" height="80" />
     </extensionElements>
     <decisionTable id="DecisionTable_1shx0di">
-      <input id="InputClause_1gmby9y">
+      <input id="InputClause_1gmby9y" label="Level of Hierarchy">
         <inputExpression id="LiteralExpression_14uqp9b" typeRef="string" />
+        <inputValues id="UnaryTests_0g5q3bk">
+          <text>"Trainee","Staff","Project Leader","Team Leader","Head of Department","CEO","Board of Directors"</text>
+        </inputValues>
       </input>
-      <output id="OutputClause_0lt102y" typeRef="string" />
+      <output id="OutputClause_0lt102y" label="Contract negotiator" typeRef="string">
+        <outputValues id="UnaryTests_1adjxhx">
+          <text>"HR","CEO","All memeber of the board of directors","One member of the board + HR"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0qvw2t4">
+        <inputEntry id="UnaryTests_0hr92wc">
+          <text>"Trainee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y5aofw">
+          <text>"HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13674be">
+        <inputEntry id="UnaryTests_1gm43fk">
+          <text>"Staff"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e8awsv">
+          <text>"HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cieoow">
+        <inputEntry id="UnaryTests_1js9rqp">
+          <text>"Project Leader"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a51fl2">
+          <text>"HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06qqnw7">
+        <inputEntry id="UnaryTests_1x2r4cc">
+          <text>"Team Leader"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_163e98d">
+          <text>"HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cnd8dv">
+        <inputEntry id="UnaryTests_11eb5kf">
+          <text>"Head of Department"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15udpc1">
+          <text>"CEO + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nxnygm">
+        <inputEntry id="UnaryTests_0eyliy5">
+          <text>"CEO"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01jopf1">
+          <text>"One member of the board + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p4mtrj">
+        <inputEntry id="UnaryTests_049pltx">
+          <text>"Board of Directors"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ruhqj7">
+          <text>"All memeber of the board of directors"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="Decision_1x0v2qh" name="Evaluate agreement">
