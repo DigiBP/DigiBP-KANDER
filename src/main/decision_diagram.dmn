@@ -5,18 +5,42 @@
       <biodi:bounds x="157" y="81" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable_1">
-      <input id="input_1" label="Title of Position">
+      <input id="input_1" label="Level of hierarchy">
         <inputExpression id="inputExpression_1" typeRef="string">
-          <text>Title of Position</text>
+          <text>Level of hierarchy</text>
         </inputExpression>
         <inputValues id="UnaryTests_0ses18i">
-          <text>"Administration","Accounting"</text>
+          <text>"Trainee","Staff","Project Leader","Team Leader","Head of Department","CEO","Board of directors"</text>
         </inputValues>
       </input>
       <input id="InputClause_1kadzvi" label="Percentage">
         <inputExpression id="LiteralExpression_0rtxh72" typeRef="double">
           <text>Percentage</text>
         </inputExpression>
+      </input>
+      <input id="InputClause_1czpynk" label="Lack of human resources">
+        <inputExpression id="LiteralExpression_1yxwm2t" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0o074ns">
+          <text>"True","False"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0hb021k" label="Employment relationship">
+        <inputExpression id="LiteralExpression_1r8hisp" typeRef="string">
+          <text>Employment relationship</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1hqgxnf">
+          <text>"temporary","permanent","internship"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1oy42bb" label="Financing">
+        <inputExpression id="LiteralExpression_0mno5kd" typeRef="string">
+          <text>Financing</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0l31jjr">
+          <text>"Approved","Declined"</text>
+        </inputValues>
       </input>
       <output id="output_1" typeRef="string">
         <outputValues id="UnaryTests_08rpvmp">
@@ -25,46 +49,282 @@
       </output>
       <rule id="DecisionRule_1ib31l7">
         <inputEntry id="UnaryTests_0n3qkcs">
-          <text>"Administration"</text>
+          <text>"Trainee"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_114ka4x">
-          <text>&lt;= 0.4</text>
+          <text>[0.4...1]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1amdj94">
+          <text>"True","False"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a5anjb">
+          <text>"internship"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uvgnxx">
+          <text>"Approved"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02gblj0">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12g46lg">
+        <inputEntry id="UnaryTests_13l0jii">
+          <text>"Trainee"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1us40yf">
+          <text>&lt;0.4, [0.4...1]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yikyw1">
+          <text>"True","False"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1toqb1w">
+          <text>"internship"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ofptto">
+          <text>"Declined"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01ylmm4">
           <text>"Declined"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1h851gx">
         <inputEntry id="UnaryTests_0jjjc7t">
-          <text>"Accounting"</text>
+          <text>"Staff"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14xw2jh">
-          <text>&lt;= 0.4</text>
+          <text>[0.1...1]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08mywn0">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06dvgt0">
+          <text>"temporary"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02aesk8">
+          <text>"Approved"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13r0dkj">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18fm2g9">
+        <inputEntry id="UnaryTests_1xo4wwj">
+          <text>"Staff"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_134owu6">
+          <text>[0.1...1]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cmufl4">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cbphta">
+          <text>"permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18jmu55">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g91ooz">
           <text>"Declined"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_008ufs9">
         <inputEntry id="UnaryTests_03bpb8a">
-          <text>"Administration","Accounting"</text>
+          <text>"Project Leader"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1c6dmuj">
-          <text>&gt; 0.4</text>
+          <text>[0.6...1]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r4bmcx">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16xb1jo">
+          <text>"temporary"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09j80f4">
+          <text>"Approved"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0e6u11s">
           <text>"Approved"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0dy3qoc">
+        <inputEntry id="UnaryTests_0suvtft">
+          <text>"Project Leader"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qzcuzg">
+          <text>[0.6...1]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jhim0x">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_015ctp5">
+          <text>"permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07axirj">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07i5u0i">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_07oitn1">
         <inputEntry id="UnaryTests_06cwxl0">
-          <text></text>
+          <text>"Team Leader"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1incjr5">
-          <text>&gt; 0.4</text>
+          <text>&gt;0.8</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x9b377">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qq187a">
+          <text>"temporary"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ezx2pj">
+          <text>"Approved"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1yfqexh">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1amirzm">
+        <inputEntry id="UnaryTests_00j64vx">
+          <text>"Team Leader"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_112hjch">
+          <text>&gt;0.8</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11ndmh2">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03e5rga">
+          <text>"permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18t0a9q">
           <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w3afe6">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0duzcgm">
+        <inputEntry id="UnaryTests_0u17kfy">
+          <text>"Head of Department"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mqcx6u">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xbomev">
+          <text>"False"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nxfxx1">
+          <text>"temporary","permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c5cxph">
+          <text>"Declined"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fwt89w">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dngmel">
+        <inputEntry id="UnaryTests_1xmhwjj">
+          <text>"CEO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00lsf9y">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05wvv2m">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15mkfut">
+          <text>"permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nyrl59">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ty44yq">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w1zt1h">
+        <inputEntry id="UnaryTests_0dd8pzv">
+          <text>"CEO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0foxzus">
+          <text>&gt;1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_082wsjd">
+          <text>"True"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ae36m7">
+          <text>"temporary","permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fkgxpq">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k4yg10">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wc4158">
+        <inputEntry id="UnaryTests_1yjcwlq">
+          <text>"Board of directors"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_153vncg">
+          <text>[0.1...0.6]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uoq03m">
+          <text>"False"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z8pen2">
+          <text>"permanent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aclmu5">
+          <text>"Declined"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02bw573">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14wn548">
+        <inputEntry id="UnaryTests_0p44mtb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mjkc63">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sjtf5u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b6a8n6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kqje2n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d5c38b">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13d23dm">
+        <inputEntry id="UnaryTests_1gr99x0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uferjm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yf2uyu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19knunb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13r1o53">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07ismfn">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -262,10 +522,133 @@
       <biodi:bounds x="649" y="82" width="180" height="80" />
     </extensionElements>
     <decisionTable id="DecisionTable_15qf5ha">
-      <input id="InputClause_0h8p7gr">
-        <inputExpression id="LiteralExpression_1qh8y1d" typeRef="string" />
+      <input id="InputClause_0h8p7gr" label="Practical expericence">
+        <inputExpression id="LiteralExpression_1qh8y1d" typeRef="double">
+          <text>Practical expericence</text>
+        </inputExpression>
       </input>
-      <output id="OutputClause_0g5ul83" typeRef="string" />
+      <input id="InputClause_00gc12v" label="Level of education">
+        <inputExpression id="LiteralExpression_0k4kicp" typeRef="double">
+          <text>Level of education</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_080k0gj" label="Language skills">
+        <inputExpression id="LiteralExpression_02sttcp" typeRef="double">
+          <text>Language skills</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1g89xw2" label="Additional specific requirements">
+        <inputExpression id="LiteralExpression_0teu7t6" typeRef="double">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0g5ul83" label="Evaluation" name="Evaluation" typeRef="string">
+        <outputValues id="UnaryTests_11uj16y">
+          <text>"Approved","Declined"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0nkap11">
+        <inputEntry id="UnaryTests_0fc490e">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15x0wzc">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03rmec9">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09qwjm1">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06e6m1x">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oj80bx">
+        <inputEntry id="UnaryTests_01qs35e">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17z9otl">
+          <text>&lt;40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19p13yf">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_086993t">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zrjpy8">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ajrpb1">
+        <inputEntry id="UnaryTests_1gxoz1x">
+          <text>&gt;= 40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s9e9m5">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a3yjlb">
+          <text>&gt;=80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p9126c">
+          <text>&gt;=60</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0soczy2">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00r2a7t">
+        <inputEntry id="UnaryTests_1vawqbq">
+          <text>&lt;60</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1db9cmd">
+          <text>&lt;60</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lkkkbp">
+          <text>&lt;60</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0omweum">
+          <text>&lt;60</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vhf8ww">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zilr1d">
+        <inputEntry id="UnaryTests_0ff6g4c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gez19o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ebyeby">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1chrulb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ye8b1l">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02n7qkb">
+        <inputEntry id="UnaryTests_1ggyyiu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qn2a16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rdx6oo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bpv7p8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l6wu9f">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="Decision_0zwmp49" name="Prepare Interview">
@@ -421,10 +804,131 @@
       <biodi:bounds x="655" y="210" width="180" height="80" />
     </extensionElements>
     <decisionTable id="DecisionTable_1a4fsa0">
-      <input id="InputClause_1awgawu">
-        <inputExpression id="LiteralExpression_0xpxhe7" typeRef="string" />
+      <input id="InputClause_1awgawu" label="Salary">
+        <inputExpression id="LiteralExpression_0xpxhe7" typeRef="string">
+          <text>Salary</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1j6uv56">
+          <text>"Agreed","Inconsistant"</text>
+        </inputValues>
       </input>
-      <output id="OutputClause_1e4edti" typeRef="string" />
+      <input id="InputClause_1yt1b1z" label="Holidays">
+        <inputExpression id="LiteralExpression_0egcmto" typeRef="string">
+          <text>Holidays</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1k3joux">
+          <text>"Agreed","Inconsistant"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1wvw8r9" label="Pensum">
+        <inputExpression id="LiteralExpression_1vhbjd1" typeRef="string">
+          <text>Pensum</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_03nb1nk">
+          <text>"Agreed","Inconsistant"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1j0zow6" label="Expenses">
+        <inputExpression id="LiteralExpression_1mrgnfp" typeRef="string">
+          <text>Expenses</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1a9c4o1">
+          <text>"Agreed","Inconsistant"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0k9tgu8" label="non-monetary benefits">
+        <inputExpression id="LiteralExpression_1k2pg9w" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1hj6l9v">
+          <text>"Agreed","Inconsistant"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_1e4edti" label="Agreement" name="Agreement" typeRef="string">
+        <outputValues id="UnaryTests_1rsygz6">
+          <text>"Approved","Declined"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1j5nl5g">
+        <inputEntry id="UnaryTests_1lr2jr6">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wthpvs">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00swcaz">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17s1obj">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12qnlzn">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dozsw9">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pf7iyx">
+        <inputEntry id="UnaryTests_0etttdc">
+          <text>"Inconsistant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_091wpsl">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_117xlea">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cfogyw">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pigxix">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14mves3">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k800ns">
+        <inputEntry id="UnaryTests_0gekenh">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01lb2l6">
+          <text>"Inconsistant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_084kuh9">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eqxu34">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ang3dg">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1frtwyp">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08duvji">
+        <inputEntry id="UnaryTests_1vl4ln3">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vns1wh">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06inhnc">
+          <text>"Inconsistant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wb5286">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jwrcor">
+          <text>"Agreed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w3vr95">
+          <text>"Declined"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
 </definitions>
