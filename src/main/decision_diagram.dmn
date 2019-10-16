@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0r5dzuy" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0r5dzuy" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
   <decision id="Decision_0kqowkf" name="Decision HR">
     <extensionElements>
       <biodi:bounds x="157" y="81" width="180" height="80" />
@@ -152,8 +152,71 @@
     <decisionTable id="DecisionTable_0kp0c13">
       <input id="InputClause_1ve9hx8">
         <inputExpression id="LiteralExpression_1v7fm34" typeRef="string" />
+        <inputValues id="UnaryTests_0x1zvoe">
+          <text>"Trainee","Staff","Project Leader","Team Leader","Head of Department","CEO","Board of directors"</text>
+        </inputValues>
       </input>
-      <output id="OutputClause_0hnb9w4" typeRef="string" />
+      <output id="OutputClause_0hnb9w4" typeRef="string">
+        <outputValues id="UnaryTests_0mn2wr9">
+          <text>"Project Leader + HR","Team Leader + HR","Head of Department + HR","CEO + HR","2 members of the board of directors + HR","All members of the board of directors"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1w04rvs">
+        <inputEntry id="UnaryTests_00shlw0">
+          <text>"Trainee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1updo6e">
+          <text>"Project Leader + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kyxrk4">
+        <inputEntry id="UnaryTests_0opjlab">
+          <text>"Staff"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12321fv">
+          <text>"Team Leader + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yp16ik">
+        <inputEntry id="UnaryTests_0ydfkac">
+          <text>"Project Leader"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05avc7u">
+          <text>"Head of Department + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pwdtb8">
+        <inputEntry id="UnaryTests_0igs6uu">
+          <text>"Team Leader"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k68eq3">
+          <text>"Head of Department + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pfjbso">
+        <inputEntry id="UnaryTests_02mai77">
+          <text>"Head of Department"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nqia5d">
+          <text>"CEO + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j7mf0x">
+        <inputEntry id="UnaryTests_1tsaqkf">
+          <text>"CEO"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08nn0zw">
+          <text>"2 members of the board of directors + HR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09sl9se">
+        <inputEntry id="UnaryTests_0wln8d8">
+          <text>"Board of directors"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16qudpv">
+          <text>"All members of the board of directors"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="Decision_1qk17y7" name="Define contract negotiator">
