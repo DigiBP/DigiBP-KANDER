@@ -8,19 +8,6 @@
   </bpmn:collaboration>
   <bpmn:process id="Process_0p27h0x" isExecutable="false">
     <bpmn:laneSet id="LaneSet_111mbvm" />
-    <bpmn:task id="t2_PublishJobOffer" name="Publish&#10;Job Offer">
-      <bpmn:incoming>SequenceFlow_0gxikuh</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1x8fpn3</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="t3_ScreenApplication" name="Screen Applications">
-      <bpmn:incoming>SequenceFlow_1x8fpn3</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_17ji0de</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0lg47e3</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Task_0iot4m3" name="Interview Process">
-      <bpmn:incoming>SequenceFlow_0lg47e3</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_18kc7t3</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:exclusiveGateway id="ExclusiveGateway_0jy1n7d" name="Right candidate found?">
       <bpmn:incoming>SequenceFlow_18kc7t3</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0j7c23b</bpmn:outgoing>
@@ -36,13 +23,26 @@
     <bpmn:endEvent id="EndEvent_0sdcmgd">
       <bpmn:incoming>SequenceFlow_1mgpvks</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:subProcess id="Task_0em5zj4" name="Hiring and Onboarding Process">
-      <bpmn:incoming>SequenceFlow_0j7c23b</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1mgpvks</bpmn:outgoing>
-    </bpmn:subProcess>
     <bpmn:startEvent id="StartEvent_1ihcukq" name="Request granted">
       <bpmn:outgoing>SequenceFlow_0gxikuh</bpmn:outgoing>
     </bpmn:startEvent>
+    <bpmn:userTask id="t2_PublishJobOffer" name="Publish&#10;Job Offer">
+      <bpmn:incoming>SequenceFlow_0gxikuh</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1x8fpn3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t3_ScreenApplication" name="Screen Applications">
+      <bpmn:incoming>SequenceFlow_1x8fpn3</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_17ji0de</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0lg47e3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_0iot4m3" name="Interview Process">
+      <bpmn:incoming>SequenceFlow_0lg47e3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18kc7t3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_0em5zj4" name="Hiring and Onboarding Process">
+      <bpmn:incoming>SequenceFlow_0j7c23b</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1mgpvks</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="t1_opencase">
@@ -62,19 +62,10 @@
         <di:waypoint x="358" y="310" />
         <di:waypoint x="420" y="310" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Task_0jh17bj_di" bpmnElement="t2_PublishJobOffer">
-        <dc:Bounds x="420" y="270" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_0hd1bjk_di" bpmnElement="t3_ScreenApplication">
-        <dc:Bounds x="580" y="270" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1x8fpn3_di" bpmnElement="SequenceFlow_1x8fpn3">
         <di:waypoint x="520" y="310" />
         <di:waypoint x="580" y="310" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Task_0iot4m3_di" bpmnElement="Task_0iot4m3">
-        <dc:Bounds x="740" y="270" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0lg47e3_di" bpmnElement="SequenceFlow_0lg47e3">
         <di:waypoint x="680" y="310" />
         <di:waypoint x="740" y="310" />
@@ -112,9 +103,6 @@
       <bpmndi:BPMNShape id="EndEvent_0sdcmgd_di" bpmnElement="EndEvent_0sdcmgd">
         <dc:Bounds x="1182" y="292" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="SubProcess_1do8esi_di" bpmnElement="Task_0em5zj4">
-        <dc:Bounds x="1020" y="270" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_0rxugvd_di" bpmnElement="Participant_02t12k0" isHorizontal="true">
         <dc:Bounds x="122" y="430" width="1118" height="60" />
       </bpmndi:BPMNShape>
@@ -122,6 +110,18 @@
         <di:waypoint x="340" y="426" />
         <di:waypoint x="340" y="328" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1njs54g_di" bpmnElement="t2_PublishJobOffer">
+        <dc:Bounds x="420" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1gjyjiu_di" bpmnElement="t3_ScreenApplication">
+        <dc:Bounds x="580" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0331dl5_di" bpmnElement="Task_0iot4m3">
+        <dc:Bounds x="740" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0zy02n7_di" bpmnElement="Task_0em5zj4">
+        <dc:Bounds x="1020" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
