@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0cl7id8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.2.1">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0cl7id8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
   <bpmn:collaboration id="Collaboration_1cm6lc7">
     <bpmn:participant id="Participant_133laiz" name="RedroWal - Preboarding Process" processRef="Process_0771ici" />
     <bpmn:participant id="Participant_0th5c8f" name="Candidate / New Employee" />
@@ -20,7 +20,6 @@
         <bpmn:flowNodeRef>Task_0428pk8</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0v6e4vz</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0d086es</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>ExclusiveGateway_0ea1nay</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1fz3hna" name="IT">
         <bpmn:flowNodeRef>Task_0pezmez</bpmn:flowNodeRef>
@@ -36,6 +35,7 @@
         <bpmn:flowNodeRef>Task_0n6144t</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1wrh6df</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_12tmr3q</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ExclusiveGateway_0ea1nay</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:sequenceFlow id="SequenceFlow_0iyzwyc" sourceRef="ExclusiveGateway_0jizvej" targetRef="Task_0pezmez" />
@@ -58,11 +58,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_0tteo79" sourceRef="Task_0428pk8" targetRef="Task_0v6e4vz" />
     <bpmn:sequenceFlow id="SequenceFlow_1e83awg" sourceRef="Task_0v6e4vz" targetRef="Task_0d086es" />
     <bpmn:sequenceFlow id="SequenceFlow_1ogt8ab" sourceRef="Task_0d086es" targetRef="ExclusiveGateway_0ea1nay" />
-    <bpmn:parallelGateway id="ExclusiveGateway_0ea1nay">
-      <bpmn:incoming>SequenceFlow_1v9j33b</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_1ogt8ab</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_138i81r</bpmn:outgoing>
-    </bpmn:parallelGateway>
     <bpmn:sendTask id="Task_0d086es" name="Send Documents to Department">
       <bpmn:incoming>SequenceFlow_1e83awg</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ogt8ab</bpmn:outgoing>
@@ -148,6 +143,11 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1ckfqa0" sourceRef="Task_0n6144t" targetRef="Task_1wrh6df" />
     <bpmn:sequenceFlow id="SequenceFlow_1f4fzj5" sourceRef="Task_1wrh6df" targetRef="EndEvent_12tmr3q" />
+    <bpmn:parallelGateway id="ExclusiveGateway_0ea1nay">
+      <bpmn:incoming>SequenceFlow_1v9j33b</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1ogt8ab</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_138i81r</bpmn:outgoing>
+    </bpmn:parallelGateway>
     <bpmn:association id="Association_1xc3vwp" sourceRef="Task_0v6e4vz" targetRef="TextAnnotation_0pef0yr" />
     <bpmn:association id="Association_0su00bp" sourceRef="Task_0wqeqme" targetRef="TextAnnotation_0trr9b0" />
     <bpmn:textAnnotation id="TextAnnotation_0pef0yr">
@@ -202,7 +202,7 @@
         <di:waypoint x="2737" y="569" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ParallelGateway_0m4kk5m_di" bpmnElement="ExclusiveGateway_0ea1nay">
-        <dc:Bounds x="2369" y="281" width="50" height="50" />
+        <dc:Bounds x="2369" y="544" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_1d6yu3v_di" bpmnElement="MessageFlow_1d6yu3v">
         <di:waypoint x="336" y="266" />
@@ -285,7 +285,7 @@
         <di:waypoint x="1106" y="478" />
         <di:waypoint x="1106" y="639" />
         <di:waypoint x="2394" y="639" />
-        <di:waypoint x="2394" y="331" />
+        <di:waypoint x="2394" y="594" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1e83awg_di" bpmnElement="SequenceFlow_1e83awg">
         <di:waypoint x="2175" y="306" />
@@ -293,7 +293,8 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1ogt8ab_di" bpmnElement="SequenceFlow_1ogt8ab">
         <di:waypoint x="2305" y="306" />
-        <di:waypoint x="2369" y="306" />
+        <di:waypoint x="2394" y="306" />
+        <di:waypoint x="2394" y="544" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="SendTask_1i2v8on_di" bpmnElement="Task_1c6qz86">
         <dc:Bounds x="1325" y="266" width="100" height="80" />
@@ -357,9 +358,7 @@
         <dc:Bounds x="2205" y="266" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_138i81r_di" bpmnElement="SequenceFlow_138i81r">
-        <di:waypoint x="2419" y="306" />
-        <di:waypoint x="2445" y="306" />
-        <di:waypoint x="2445" y="569" />
+        <di:waypoint x="2419" y="569" />
         <di:waypoint x="2465" y="569" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ReceiveTask_1y84ntm_di" bpmnElement="Task_0n6144t">
