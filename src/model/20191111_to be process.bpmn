@@ -171,7 +171,7 @@
         <dc:Bounds x="186" y="500" width="2392" height="179" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_06w9z8m_di" bpmnElement="Participant_0th5c8f" isHorizontal="true">
-        <dc:Bounds x="185" y="40" width="2265" height="60" />
+        <dc:Bounds x="185" y="40" width="2393" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0teg9z1_di" bpmnElement="SequenceFlow_0teg9z1">
         <di:waypoint x="1460" y="306" />

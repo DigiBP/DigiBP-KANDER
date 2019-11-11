@@ -21,13 +21,13 @@
         <bpmn:flowNodeRef>t_preparedocumentation</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>t_senddocumentstodepartment</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="Lane_1fz3hna" name="IT">
+      <bpmn:lane id="l_it" name="IT">
         <bpmn:flowNodeRef>t_setuploginsandkeycards</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>t_allocateequipment</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>t_setup</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>t_deliverequipment</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="Lane_0v7yk3r" name="Departement">
+      <bpmn:lane id="l_department" name="Departement">
         <bpmn:flowNodeRef>t_determinetoolsused</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>t_receiverequest</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>t_resourcesallocation</bpmn:flowNodeRef>
@@ -171,10 +171,10 @@
       <bpmndi:BPMNShape id="Lane_05qa9qx_di" bpmnElement="Lane_05qa9qx" isHorizontal="true">
         <dc:Bounds x="186" y="149" width="2647" height="229" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_1fz3hna_di" bpmnElement="Lane_1fz3hna" isHorizontal="true">
+      <bpmndi:BPMNShape id="Lane_1fz3hna_di" bpmnElement="l_it" isHorizontal="true">
         <dc:Bounds x="186" y="378" width="2647" height="122" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_0v7yk3r_di" bpmnElement="Lane_0v7yk3r" isHorizontal="true">
+      <bpmndi:BPMNShape id="Lane_0v7yk3r_di" bpmnElement="l_department" isHorizontal="true">
         <dc:Bounds x="186" y="500" width="2647" height="179" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_06w9z8m_di" bpmnElement="Participant_0th5c8f" isHorizontal="true">
