@@ -122,6 +122,9 @@
     <bpmn:receiveTask id="t_receivecandidateinformation" name="Receive Candidate Information">
       <bpmn:incoming>SequenceFlow_18r0puz</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1puapjx</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_05o0hlg">
+        <bpmn:targetRef>DataStoreReference_0gnw2ik</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:receiveTask>
     <bpmn:sendTask id="t_requestcandidateinformation" name="Request Candidate Information">
       <bpmn:incoming>SequenceFlow_1hzhsmk</bpmn:incoming>
@@ -148,6 +151,7 @@
       <bpmn:incoming>SequenceFlow_1ogt8ab</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_138i81r</bpmn:outgoing>
     </bpmn:parallelGateway>
+    <bpmn:dataStoreReference id="DataStoreReference_0gnw2ik" name="Employee Dossier" />
     <bpmn:association id="Association_1xc3vwp" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_0pef0yr" />
     <bpmn:association id="Association_0su00bp" sourceRef="t_planningonboarding" targetRef="TextAnnotation_0trr9b0" />
     <bpmn:textAnnotation id="TextAnnotation_0pef0yr">
@@ -367,6 +371,16 @@
       <bpmndi:BPMNEdge id="SequenceFlow_1ckfqa0_di" bpmnElement="SequenceFlow_1ckfqa0">
         <di:waypoint x="2565" y="569" />
         <di:waypoint x="2595" y="569" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="DataStoreReference_0gnw2ik_di" bpmnElement="DataStoreReference_0gnw2ik">
+        <dc:Bounds x="561" y="183" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="541" y="240" width="90" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_05o0hlg_di" bpmnElement="DataOutputAssociation_05o0hlg">
+        <di:waypoint x="517" y="266" />
+        <di:waypoint x="561" y="223" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
