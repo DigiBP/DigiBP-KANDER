@@ -107,7 +107,7 @@
       <bpmn:incoming>SequenceFlow_1ckfqa0</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1f4fzj5</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:endEvent id="ee_endonboarding" name="End Onboarding">
+    <bpmn:endEvent id="ee_endonboarding" name="End Preboarding">
       <bpmn:incoming>SequenceFlow_1f4fzj5</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_04vtjh5" sourceRef="t_determinetoolsetc" targetRef="t_setuplogins" />
@@ -187,7 +187,7 @@
       <bpmndi:BPMNShape id="EndEvent_12tmr3q_di" bpmnElement="ee_endonboarding">
         <dc:Bounds x="2442" y="551" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2420" y="594" width="81" height="14" />
+          <dc:Bounds x="2419" y="594" width="83" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1f4fzj5_di" bpmnElement="SequenceFlow_1f4fzj5">
