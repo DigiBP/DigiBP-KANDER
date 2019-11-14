@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0cl7id8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
   <bpmn:collaboration id="Collaboration_1cm6lc7">
-    <bpmn:participant id="Participant_133laiz" name="RedroWal - Preboarding Process" processRef="Process_0771ici" />
+    <bpmn:participant id="Participant_133laiz" name="Kander - Preboarding Process" processRef="Process_0771ici" />
     <bpmn:participant id="Participant_0th5c8f" name="Candidate / New Employee" />
     <bpmn:messageFlow id="MessageFlow_1d6yu3v" sourceRef="t_requestcandidateinformation" targetRef="Participant_0th5c8f" />
     <bpmn:messageFlow id="MessageFlow_04ngdd3" sourceRef="t_sendscheduletocandidate" targetRef="Participant_0th5c8f" />
