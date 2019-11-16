@@ -5,6 +5,24 @@
     <bpmn:participant id="Participant_0th5c8f" name="Candidate / New Employee" />
     <bpmn:messageFlow id="MessageFlow_1d6yu3v" sourceRef="t_requestcandidateinfo" targetRef="Participant_0th5c8f" />
     <bpmn:messageFlow id="MessageFlow_04ngdd3" sourceRef="t_sendscheduletocandidate" targetRef="Participant_0th5c8f" />
+    <bpmn:textAnnotation id="TextAnnotation_1scfjfq">
+      <bpmn:text>structure of POST:
+{
+    "CRM": TRUE,
+    "ERP": FALSE
+
+   ...
+}</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1cr4id1">
+      <bpmn:text>structure of POST:
+{
+    "Project Plan": TRUE,
+    "Mission &amp; Vision": FALSE
+
+   ...
+}</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:collaboration>
   <bpmn:process id="Process_0771ici" isExecutable="true">
     <bpmn:laneSet id="LaneSet_06osur6">
@@ -89,11 +107,11 @@
       <bpmn:incoming>SequenceFlow_0xs3a00</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1v9j33b</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:businessRuleTask id="t_planningonboarding" name="Planning of Onboarding Schedule">
+    <bpmn:businessRuleTask id="t_planningonboarding" name="Determine Onboarding Schedule">
       <bpmn:incoming>SequenceFlow_0g1l7ii</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0teg9z1</bpmn:outgoing>
     </bpmn:businessRuleTask>
-    <bpmn:serviceTask id="t_scheduleresources" name="Schedule with Resources Allocation">
+    <bpmn:serviceTask id="t_scheduleresources" name="Schedule Modules with Resources Allocation">
       <bpmn:incoming>SequenceFlow_0ff96mu</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_14ljyfg</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -187,12 +205,6 @@
     <bpmn:textAnnotation id="TextAnnotation_1r38c9q">
       <bpmn:text>based on the core data, logins can be created</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0trr9b0">
-      <bpmn:text>Welcome, Introduction, Training</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1hovm2b">
-      <bpmn:text>"kommentar schreiben was planning ist =&gt; entscheidung wer 'schulungen' macht"</bpmn:text>
-    </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_16ijaq3">
       <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
     </bpmn:textAnnotation>
@@ -255,7 +267,6 @@
     <bpmn:association id="Association_0su00bp" sourceRef="t_planningonboarding" targetRef="TextAnnotation_0trr9b0" />
     <bpmn:association id="Association_0vakniz" sourceRef="t_planningonboarding" targetRef="TextAnnotation_1lbgdce" />
     <bpmn:association id="Association_07ntiff" sourceRef="t_planningonboarding" targetRef="TextAnnotation_038hw76" />
-    <bpmn:association id="Association_0f9hkf7" sourceRef="t_planningonboarding" targetRef="TextAnnotation_1hovm2b" />
     <bpmn:association id="Association_02rafrv" sourceRef="t_scheduleresources" targetRef="TextAnnotation_1uwb7ha" />
     <bpmn:association id="Association_1rz42q3" sourceRef="t_scheduleresources" targetRef="TextAnnotation_0i8bfiu" />
     <bpmn:association id="Association_03d92wk" sourceRef="t_scheduleresources" targetRef="TextAnnotation_1byd62i" />
@@ -264,6 +275,11 @@
     <bpmn:association id="Association_0x0naue" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_0cl4e5g" />
     <bpmn:association id="Association_1cl7guo" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_09blatk" />
     <bpmn:association id="Association_1svjkju" sourceRef="t_senddocumentstodepartment" targetRef="TextAnnotation_134vo50" />
+    <bpmn:association id="Association_0lvp2in" sourceRef="Task_1dxxv4j" targetRef="TextAnnotation_1scfjfq" />
+    <bpmn:association id="Association_0pjw98c" sourceRef="Task_1g8kpy2" targetRef="TextAnnotation_1cr4id1" />
+    <bpmn:textAnnotation id="TextAnnotation_0trr9b0">
+      <bpmn:text>Welcome, Introduction, Training</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1cm6lc7">
@@ -286,7 +302,7 @@
         <dc:Bounds x="190" y="720" width="2926" height="179" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_06w9z8m_di" bpmnElement="Participant_0th5c8f" isHorizontal="true">
-        <dc:Bounds x="190" y="80" width="2668" height="60" />
+        <dc:Bounds x="190" y="80" width="2926" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0teg9z1_di" bpmnElement="SequenceFlow_0teg9z1">
         <di:waypoint x="1938" y="526" />
@@ -317,11 +333,11 @@
         <di:waypoint x="446" y="140" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0trr9b0_di" bpmnElement="TextAnnotation_0trr9b0">
-        <dc:Bounds x="1758" y="389" width="100" height="51" />
+        <dc:Bounds x="1720" y="400" width="100" height="51" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0su00bp_di" bpmnElement="Association_0su00bp">
-        <di:waypoint x="1859" y="486" />
-        <di:waypoint x="1826" y="440" />
+        <di:waypoint x="1843" y="488" />
+        <di:waypoint x="1800" y="451" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_04ngdd3_di" bpmnElement="MessageFlow_04ngdd3">
         <di:waypoint x="2307" y="486" />
@@ -595,13 +611,6 @@
         <di:waypoint x="339" y="510" />
         <di:waypoint x="271" y="357" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_1hovm2b_di" bpmnElement="TextAnnotation_1hovm2b" bioc:stroke="rgb(142, 36, 170)" bioc:fill="rgb(225, 190, 231)">
-        <dc:Bounds x="1825" y="215" width="100" height="107" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_0f9hkf7_di" bpmnElement="Association_0f9hkf7" bioc:stroke="rgb(142, 36, 170)" bioc:fill="rgb(225, 190, 231)">
-        <di:waypoint x="1885" y="486" />
-        <di:waypoint x="1880" y="322" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_04cas0y_di" bpmnElement="TextAnnotation_04cas0y" bioc:stroke="rgb(142, 36, 170)" bioc:fill="rgb(225, 190, 231)">
         <dc:Bounds x="700" y="236" width="100" height="53" />
       </bpmndi:BPMNShape>
@@ -665,6 +674,20 @@
       <bpmndi:BPMNShape id="ServiceTask_1ge91e3_di" bpmnElement="Task_1dxxv4j" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
         <dc:Bounds x="1060" y="618" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1scfjfq_di" bpmnElement="TextAnnotation_1scfjfq" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <dc:Bounds x="1030" y="930" width="140" height="112" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0lvp2in_di" bpmnElement="Association_0lvp2in" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <di:waypoint x="1109" y="698" />
+        <di:waypoint x="1102" y="930" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1cr4id1_di" bpmnElement="TextAnnotation_1cr4id1" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <dc:Bounds x="1970" y="920" width="170" height="112" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0pjw98c_di" bpmnElement="Association_0pjw98c" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <di:waypoint x="2020" y="566" />
+        <di:waypoint x="2038" y="920" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
