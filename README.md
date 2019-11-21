@@ -24,7 +24,7 @@ As we want to become a leader within our field, we must optimize kander to make 
 The improvement process starts with the preboarding process of kander. With digitalizing the shorter but nevertheless important processes, we want to create the change we need at kander. Following the digitalization of the preboarding process at kander explained in detail:
 
 ### Current Process
-![1](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
+![2](https://user-images.githubusercontent.com/55824459/69340813-9722e500-0c68-11ea-91bf-ae3bb863c45e.png)
 
 ### Future Process
-![1](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
+![3](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
