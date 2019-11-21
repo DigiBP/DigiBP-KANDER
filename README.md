@@ -1,5 +1,5 @@
 # kander
-![Logo](logo.png)
+![1](https://user-images.githubusercontent.com/55824459/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5910.png)
 
 ## Company Overview
 As a successful international company, kander offers technologies for osteosynthesis in the fields of cranio-maxillofacial surgery and upper and lower extremities. The company’s headquarters is in Muttenz, Switzerland. kander works with universities and surgeons around the globe, to optimize its treatments and improve the health of its patients.  
