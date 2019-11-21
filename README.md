@@ -12,7 +12,7 @@ In 2018, kander is a company with approx. 237 employees and over 37 sales partne
 
 **Vision**<br>
 <span style="color:#FFFFFF; background:#FF69B4"> "With our partners, we are setting market standards for surgical restoration of the entire musculoskeletal system of the skull and extremities for the long-term benefit of the patient." </span> 
-=== Kander Future ===
+### Kander Future 
 In 2019, the executive management of kander set the goal to start improving its internal processes in order to being able to offer the most excellent service and technologies to its customers and citizens. The company and its valuable employees are now starting with the change within the company. 
 
 As we want to become a leader within our field, we must optimize kander to make our products accessible to our valuable customers. Therefore, kander will focus on the most valuable technologies to improve its organization, products, and relations in the long-run. 
@@ -24,7 +24,5 @@ The improvement process starts with the preboarding process of kander. With digi
 ## Company Preboarding Process
 ### Current Process
 ![1](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
-
-[[File:process.png |link=https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png]]
 
 ### Future Process
