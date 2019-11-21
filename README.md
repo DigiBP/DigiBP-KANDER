@@ -1,4 +1,3 @@
-# kander
 ![1](https://user-images.githubusercontent.com/55824459/69340700-5925c100-0c68-11ea-8d8f-6624baf15645.PNG)
 
 ## Company Overview
