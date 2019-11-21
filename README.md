@@ -19,10 +19,9 @@ In 2019, the executive management of kander set the goal to start improving its 
 As we want to become a leader within our field, we must optimize kander to make our products accessible to our valuable customers. Therefore, kander will focus on the most valuable technologies to improve its organization, products, and relations in the long-run. 
 
 ----
-
+## Company Preboarding Process
 The improvement process starts with the preboarding process of kander. With digitalizing the shorter but nevertheless important processes, we want to create the change we need at kander. Following the digitalization of the preboarding process at kander explained in detail:
 
-## Company Preboarding Process
 ### Current Process
 ![1](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
 
