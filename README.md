@@ -7,10 +7,10 @@ The company started out in 2003 with Dr. A. E. Meier, as she started out with de
 ### Kander Now 
 In 2018, kander is a company with approx. 237 employees and over 37 sales partners. The company has net sales of about CHF 97 Million as of December 31, 2018. 
 
-'''Mission''' <br>
+**Mission** <br>
 <span style="color:#FFFFFF; background:#FF69B4">"We are committed to providing surgeons with the most innovative titanium implants and instruments combined with the best possible service." </span> 
 
-'''Vision'''<br>
+**Vision**<br>
 <span style="color:#FFFFFF; background:#FF69B4"> "With our partners, we are setting market standards for surgical restoration of the entire musculoskeletal system of the skull and extremities for the long-term benefit of the patient." </span> 
 === Kander Future ===
 In 2019, the executive management of kander set the goal to start improving its internal processes in order to being able to offer the most excellent service and technologies to its customers and citizens. The company and its valuable employees are now starting with the change within the company. 
