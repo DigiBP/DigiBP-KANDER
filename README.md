@@ -26,3 +26,4 @@ The improvement process starts with the preboarding process of kander. With digi
 ![1](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
 
 ### Future Process
+![1](https://user-images.githubusercontent.com/55824459/69329370-43f16800-0c51-11ea-86e8-3c2a084f5909.png)
