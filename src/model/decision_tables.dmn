@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1yy83to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
+  <decision id="determine_software_tools" name="Dermine Software, Tools, Access Right">
+    <extensionElements>
+      <biodi:bounds x="150" y="81" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="string" />
+    </decisionTable>
+  </decision>
+  <decision id="determine_onboarding_schedule" name="Determine Onboarding Schedule">
+    <extensionElements>
+      <biodi:bounds x="379" y="82" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_0ar0ufj">
+      <input id="InputClause_0jae07w">
+        <inputExpression id="LiteralExpression_04cvzm3" typeRef="string" />
+      </input>
+      <output id="OutputClause_1szrzt2" typeRef="string" />
+    </decisionTable>
+  </decision>
+</definitions>

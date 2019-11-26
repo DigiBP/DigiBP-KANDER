@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0cl7id8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
-  <bpmn:collaboration id="Collaboration_1cm6lc7">
+  <bpmn:collaboration id="onboarding_process_kander">
     <bpmn:participant id="Participant_133laiz" name="Kander - Preboarding Process" processRef="Process_0771ici" />
     <bpmn:participant id="Participant_0th5c8f" name="Candidate / New Employee" />
     <bpmn:messageFlow id="MessageFlow_1d6yu3v" sourceRef="t_requestcandidateinfo" targetRef="Participant_0th5c8f" />
@@ -55,109 +55,6 @@
         <bpmn:flowNodeRef>t_setupworkplace</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:businessRuleTask id="t_determinetoolsetc" name="Determine software, tools, and access rights">
-      <bpmn:incoming>SequenceFlow_0iyzwyc</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_04vtjh5</bpmn:outgoing>
-    </bpmn:businessRuleTask>
-    <bpmn:sendTask id="t_requestcandidateinfo" name="Request Candidate Information">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:inputParameter name="Input_29p30md" />
-        </camunda:inputOutput>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0n3o4dg</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_18r0puz</bpmn:outgoing>
-    </bpmn:sendTask>
-    <bpmn:parallelGateway id="ExclusiveGateway_0jizvej">
-      <bpmn:incoming>SequenceFlow_1puapjx</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0g1l7ii</bpmn:outgoing>
-      <bpmn:outgoing>SequenceFlow_0iyzwyc</bpmn:outgoing>
-    </bpmn:parallelGateway>
-    <bpmn:serviceTask id="T_candidateinfoavail" name="Store Candidate Information">
-      <bpmn:incoming>SequenceFlow_13m9xpu</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1puapjx</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_0usti8e">
-        <bpmn:targetRef>DataStoreReference_0nn9can</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:serviceTask>
-    <bpmn:intermediateCatchEvent id="IntermediateThrowEvent_01ba31z" name="Candidate information received (from chatbot)">
-      <bpmn:incoming>SequenceFlow_18r0puz</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_13m9xpu</bpmn:outgoing>
-      <bpmn:messageEventDefinition />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:dataStoreReference id="DataStoreReference_0nn9can" name="Employee Dossier" />
-    <bpmn:serviceTask id="t_setuplogins" name="Set up Logins">
-      <bpmn:incoming>SequenceFlow_04vtjh5</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0f274xm</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1eacg14">
-        <bpmn:targetRef>DataStoreReference_01zp803</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:serviceTask>
-    <bpmn:userTask id="t_allocateequipment" name="Allocate equipment">
-      <bpmn:incoming>SequenceFlow_09o42j8</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0w5o6q4</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="t_setuphwsw" name="Set up Hardware  and Software">
-      <bpmn:incoming>SequenceFlow_0w5o6q4</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0xs3a00</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:manualTask id="t_deliverequipment" name="Deliver Equipment">
-      <bpmn:incoming>SequenceFlow_0xs3a00</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1v9j33b</bpmn:outgoing>
-    </bpmn:manualTask>
-    <bpmn:businessRuleTask id="t_planningonboarding" name="Determine Onboarding Schedule">
-      <bpmn:incoming>SequenceFlow_0g1l7ii</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0teg9z1</bpmn:outgoing>
-    </bpmn:businessRuleTask>
-    <bpmn:serviceTask id="t_scheduleresources" name="Schedule Modules with Resources Allocation">
-      <bpmn:incoming>SequenceFlow_0ff96mu</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_14ljyfg</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_07kqxk6">
-        <bpmn:targetRef>DataStoreReference_0jm4ae6</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:serviceTask>
-    <bpmn:sendTask id="t_sendscheduletocandidate" name="Send Schedule">
-      <bpmn:incoming>SequenceFlow_14ljyfg</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0tteo79</bpmn:outgoing>
-    </bpmn:sendTask>
-    <bpmn:serviceTask id="t_preparedocumentation" name="Prepare Documentation">
-      <bpmn:incoming>SequenceFlow_0tteo79</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1e83awg</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:sendTask id="t_senddocumentstodepartment" name="Send Documents to Department">
-      <bpmn:incoming>SequenceFlow_1e83awg</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1ogt8ab</bpmn:outgoing>
-    </bpmn:sendTask>
-    <bpmn:receiveTask id="t_receiveequanddocs" name="Recieving Equpiments and Documents">
-      <bpmn:incoming>SequenceFlow_138i81r</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1ckfqa0</bpmn:outgoing>
-    </bpmn:receiveTask>
-    <bpmn:endEvent id="ee_endonboarding" name="End Preboarding">
-      <bpmn:incoming>SequenceFlow_1f4fzj5</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:parallelGateway id="ExclusiveGateway_0ea1nay">
-      <bpmn:incoming>SequenceFlow_1v9j33b</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_1ogt8ab</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_138i81r</bpmn:outgoing>
-    </bpmn:parallelGateway>
-    <bpmn:userTask id="t_setupworkplace" name="Set up Workplace">
-      <bpmn:incoming>SequenceFlow_1ckfqa0</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1f4fzj5</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="t_setupkeycard" name="Set up Key Card">
-      <bpmn:incoming>SequenceFlow_0f274xm</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_09o42j8</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:serviceTask id="Task_1g8kpy2" name="Add Onboarding Modules">
-      <bpmn:incoming>SequenceFlow_0teg9z1</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0ff96mu</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1xnp2yv">
-        <bpmn:targetRef>DataStoreReference_0jm4ae6</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:serviceTask>
-    <bpmn:dataStoreReference id="DataStoreReference_0jm4ae6" />
-    <bpmn:dataStoreReference id="DataStoreReference_01zp803" />
-    <bpmn:dataStoreReference id="DataStoreReference_0hx9tht" name="Employee Dossier" />
     <bpmn:sequenceFlow id="SequenceFlow_1f4fzj5" sourceRef="t_setupworkplace" targetRef="ee_endonboarding" />
     <bpmn:sequenceFlow id="SequenceFlow_1ckfqa0" sourceRef="t_receiveequanddocs" targetRef="t_setupworkplace" />
     <bpmn:sequenceFlow id="SequenceFlow_138i81r" sourceRef="ExclusiveGateway_0ea1nay" targetRef="t_receiveequanddocs" />
@@ -180,37 +77,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_0g1l7ii" sourceRef="ExclusiveGateway_0jizvej" targetRef="t_planningonboarding" />
     <bpmn:sequenceFlow id="SequenceFlow_04vtjh5" sourceRef="t_determinetoolsetc" targetRef="t_setuplogins" />
     <bpmn:sequenceFlow id="SequenceFlow_0n3o4dg" sourceRef="Task_0ybfk7q" targetRef="t_requestcandidateinfo" />
-    <bpmn:serviceTask id="Task_0ybfk7q" name="Store Basic Candidate Information">
-      <bpmn:extensionElements>
-        <camunda:connector>
-          <camunda:inputOutput>
-            <camunda:inputParameter name="method">POST</camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/iz8vq733h2qxe1itigvddhekdefm0t5j</camunda:inputParameter>
-            <camunda:inputParameter name="headers">
-              <camunda:map>
-                <camunda:entry key="Content-Type">application/json</camunda:entry>
-              </camunda:map>
-            </camunda:inputParameter>
-            <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
-        "Name": Name,
-	"Surname": Surname,
-        "Adress": Adress,
-        "Country": Country,
-        "Phone Number": PhoneNumber,
-        "Mail Adress": MailAdress
-});</camunda:script>
-            </camunda:inputParameter>
-          </camunda:inputOutput>
-          <camunda:connectorId>http-connector</camunda:connectorId>
-        </camunda:connector>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_1hzhsmk</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0n3o4dg</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_19s2mzd">
-        <bpmn:targetRef>DataStoreReference_0hx9tht</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:serviceTask>
     <bpmn:startEvent id="se_acceptoffer" name="Accept Offer">
       <bpmn:extensionElements>
         <camunda:formData>
@@ -224,127 +90,320 @@
       </bpmn:extensionElements>
       <bpmn:outgoing>SequenceFlow_1hzhsmk</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:textAnnotation id="TextAnnotation_1cowmff">
-      <bpmn:text>name?</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1rqnn1k">
-      <bpmn:text>which one? name?</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1z0o8j8">
-      <bpmn:text>definition of input stuff and setup of fake excel sheet =&gt; DB als input modellieren?</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1tcn153">
-      <bpmn:text>Candidate fills core data form online</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1lhq6w8">
-      <bpmn:text>i: link</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1kp6gxa">
-      <bpmn:text>I: department, position, responsibilities</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_17a5k94">
-      <bpmn:text>O: software, tools, access rights, work place</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1fxxk09">
-      <bpmn:text>i: name, surname, date of birth, nat, sex, civil status, adress, country, e-mail, phone number, social sec number, no of kids, name of bank, bank account (IBAN)</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0ju36ge">
-      <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_04cas0y">
-      <bpmn:text>status: nur verbindung zu bot fehlt noch</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1r38c9q">
-      <bpmn:text>based on the core data, logins can be created</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_16ijaq3">
-      <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_134vo50">
-      <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_11hzvmd">
-      <bpmn:text>status: template für passwort und mail-adressenerstellung aufgrund namen erstellt</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1un2vhi">
-      <bpmn:text>I: tools from 3 steps before = checklist (electronic)</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0w61ck9">
-      <bpmn:text>O: checklist filled in</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_01g3bdo">
-      <bpmn:text>O: checklist filled in</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1rta0hf">
-      <bpmn:text>I: core data (name, employee id)</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0v2jesj">
-      <bpmn:text>o: login &amp; password</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1lbgdce">
-      <bpmn:text>i: start date and time, department, position</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_038hw76">
-      <bpmn:text>o: required person, amount of time</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1uwb7ha">
-      <bpmn:text>i: required personel, candidate mail-adress, start date and time, duration of meeting</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0i8bfiu">
-      <bpmn:text>schedule (places, times, resp. personel) , mail adress candidate</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0pef0yr">
-      <bpmn:text>o: Non-Disclosure Agreements, Mission / Vision, General Information</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0cl4e5g">
-      <bpmn:text>i: trigger</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0v072vp">
-      <bpmn:text>I: software checklist (electronic) from 4 tasks before</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_09blatk">
-      <bpmn:text>status: not started</bpmn:text>
+    <bpmn:serviceTask id="Task_0ybfk7q" name="Store Basic Candidate Information">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/qxoigm1ia8n7pbjjvmgh5864agor4ygu</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
+        "Name": Name,
+        "Surname": Surname,
+        "Adress": Adress,
+        "Country": Country,
+        "Phone Number": PhoneNumber,
+        "Mail Adress": MailAdress
+});</camunda:script>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="Name" />
+          <camunda:inputParameter name="Surname" />
+          <camunda:inputParameter name="Input_370nttj" />
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1hzhsmk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0n3o4dg</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_19s2mzd">
+        <bpmn:targetRef>DataStoreReference_0hx9tht</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataStoreReference id="DataStoreReference_0hx9tht" name="Employee Dossier" />
+    <bpmn:dataStoreReference id="DataStoreReference_01zp803" />
+    <bpmn:dataStoreReference id="DataStoreReference_0jm4ae6" />
+    <bpmn:serviceTask id="Task_1g8kpy2" name="Add Onboarding Modules">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0teg9z1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ff96mu</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1xnp2yv">
+        <bpmn:targetRef>DataStoreReference_0jm4ae6</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="t_setupkeycard" name="Set up Key Card">
+      <bpmn:incoming>SequenceFlow_0f274xm</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_09o42j8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t_setupworkplace" name="Set up Workplace">
+      <bpmn:incoming>SequenceFlow_1ckfqa0</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1f4fzj5</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="ExclusiveGateway_0ea1nay">
+      <bpmn:incoming>SequenceFlow_1v9j33b</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1ogt8ab</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_138i81r</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:endEvent id="ee_endonboarding" name="End Preboarding">
+      <bpmn:incoming>SequenceFlow_1f4fzj5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:receiveTask id="t_receiveequanddocs" name="Recieving Equpiments and Documents" messageRef="Message_02a0usy">
+      <bpmn:incoming>SequenceFlow_138i81r</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ckfqa0</bpmn:outgoing>
+    </bpmn:receiveTask>
+    <bpmn:sendTask id="t_senddocumentstodepartment" name="Send Documents to Department">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1e83awg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ogt8ab</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:serviceTask id="t_preparedocumentation" name="Prepare Documentation">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0tteo79</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1e83awg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sendTask id="t_sendscheduletocandidate" name="Send Schedule">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_14ljyfg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0tteo79</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:serviceTask id="t_scheduleresources" name="Schedule Modules with Resources Allocation">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0ff96mu</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_14ljyfg</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_07kqxk6">
+        <bpmn:targetRef>DataStoreReference_0jm4ae6</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:businessRuleTask id="t_planningonboarding" name="Determine Onboarding Schedule" camunda:decisionRef="determine_onboarding_schedule">
+      <bpmn:incoming>SequenceFlow_0g1l7ii</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0teg9z1</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:manualTask id="t_deliverequipment" name="Deliver Equipment">
+      <bpmn:incoming>SequenceFlow_0xs3a00</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1v9j33b</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="t_setuphwsw" name="Set up Hardware  and Software">
+      <bpmn:incoming>SequenceFlow_0w5o6q4</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0xs3a00</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t_allocateequipment" name="Allocate equipment">
+      <bpmn:incoming>SequenceFlow_09o42j8</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0w5o6q4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="t_setuplogins" name="Set up Logins">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_04vtjh5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0f274xm</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1eacg14">
+        <bpmn:targetRef>DataStoreReference_01zp803</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataStoreReference id="DataStoreReference_0nn9can" name="Employee Dossier" />
+    <bpmn:intermediateCatchEvent id="IntermediateThrowEvent_01ba31z" name="Candidate information received (from chatbot)">
+      <bpmn:incoming>SequenceFlow_18r0puz</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_13m9xpu</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="Message_1rcg06y" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:serviceTask id="T_candidateinfoavail" name="Store Candidate Information">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_13m9xpu</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1puapjx</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0usti8e">
+        <bpmn:targetRef>DataStoreReference_0nn9can</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:parallelGateway id="ExclusiveGateway_0jizvej">
+      <bpmn:incoming>SequenceFlow_1puapjx</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0g1l7ii</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0iyzwyc</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sendTask id="t_requestcandidateinfo" name="Request Candidate Information">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/r8npajicx6so6ps3zdb2y784cxcqcyl4</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({
+        "Name": Name,
+        "Surname": Surname,
+        "Mail Adress": MailAdress
+});</camunda:script>
+            </camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0n3o4dg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18r0puz</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:businessRuleTask id="t_determinetoolsetc" name="Determine Software, Tools, and Access Rights" camunda:decisionRef="determine_software_tools">
+      <bpmn:incoming>SequenceFlow_0iyzwyc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_04vtjh5</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:association id="Association_0lvp2in" sourceRef="t_setuplogins" targetRef="TextAnnotation_1scfjfq" />
+    <bpmn:association id="Association_0pjw98c" sourceRef="Task_1g8kpy2" targetRef="TextAnnotation_1cr4id1" />
+    <bpmn:association id="Association_1j7hftg" sourceRef="se_acceptoffer" targetRef="TextAnnotation_1z0o8j8" />
+    <bpmn:association id="Association_1aklo13" sourceRef="DataStoreReference_01zp803" targetRef="TextAnnotation_1cowmff" />
+    <bpmn:association id="Association_000etz8" sourceRef="DataStoreReference_0jm4ae6" targetRef="TextAnnotation_1rqnn1k" />
+    <bpmn:association id="Association_1svjkju" sourceRef="t_senddocumentstodepartment" targetRef="TextAnnotation_134vo50" />
+    <bpmn:association id="Association_1cl7guo" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_09blatk" />
+    <bpmn:association id="Association_0x0naue" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_0cl4e5g" />
+    <bpmn:association id="Association_1xc3vwp" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_0pef0yr" />
+    <bpmn:association id="Association_1sjbfwz" sourceRef="t_sendscheduletocandidate" targetRef="TextAnnotation_16ijaq3" />
+    <bpmn:association id="Association_03d92wk" sourceRef="t_scheduleresources" targetRef="TextAnnotation_1byd62i" />
+    <bpmn:association id="Association_1rz42q3" sourceRef="t_scheduleresources" targetRef="TextAnnotation_0i8bfiu" />
+    <bpmn:association id="Association_02rafrv" sourceRef="t_scheduleresources" targetRef="TextAnnotation_1uwb7ha" />
+    <bpmn:association id="Association_07ntiff" sourceRef="t_planningonboarding" targetRef="TextAnnotation_038hw76" />
+    <bpmn:association id="Association_0vakniz" sourceRef="t_planningonboarding" targetRef="TextAnnotation_1lbgdce" />
+    <bpmn:association id="Association_0su00bp" sourceRef="t_planningonboarding" targetRef="TextAnnotation_0trr9b0" />
+    <bpmn:association id="Association_0xn2p1o" sourceRef="t_setuphwsw" targetRef="TextAnnotation_01g3bdo" />
+    <bpmn:association id="Association_0faynky" sourceRef="t_setuphwsw" targetRef="TextAnnotation_0v072vp" />
+    <bpmn:association id="Association_1tzpwnp" sourceRef="t_allocateequipment" targetRef="TextAnnotation_0w61ck9" />
+    <bpmn:association id="Association_06yqyap" sourceRef="t_allocateequipment" targetRef="TextAnnotation_1un2vhi" />
+    <bpmn:association id="Association_0isxnng" sourceRef="t_setuplogins" targetRef="TextAnnotation_11hzvmd" />
+    <bpmn:association id="Association_0y85gz0" sourceRef="t_setuplogins" targetRef="TextAnnotation_0v2jesj" />
+    <bpmn:association id="Association_164630c" sourceRef="t_setuplogins" targetRef="TextAnnotation_1rta0hf" />
+    <bpmn:association id="Association_0deenst" sourceRef="t_setuplogins" targetRef="TextAnnotation_1r38c9q" />
+    <bpmn:association id="Association_0xdsnzz" sourceRef="T_candidateinfoavail" targetRef="TextAnnotation_04cas0y" />
+    <bpmn:association id="Association_1bb750q" sourceRef="T_candidateinfoavail" targetRef="TextAnnotation_1fxxk09" />
+    <bpmn:association id="Association_0bexskd" sourceRef="T_candidateinfoavail" targetRef="TextAnnotation_1tcn153" />
+    <bpmn:association id="Association_145ftiu" sourceRef="t_requestcandidateinfo" targetRef="TextAnnotation_0ju36ge" />
+    <bpmn:association id="Association_0vnjdxj" sourceRef="t_requestcandidateinfo" targetRef="TextAnnotation_1lhq6w8" />
+    <bpmn:association id="Association_1nz7img" sourceRef="t_determinetoolsetc" targetRef="TextAnnotation_17a5k94" />
+    <bpmn:association id="Association_0am36ta" sourceRef="t_determinetoolsetc" targetRef="TextAnnotation_1kp6gxa" />
+    <bpmn:textAnnotation id="TextAnnotation_0trr9b0">
+      <bpmn:text>Welcome, Introduction, Training</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_1byd62i">
       <bpmn:text>status: not started</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0trr9b0">
-      <bpmn:text>Welcome, Introduction, Training</bpmn:text>
+    <bpmn:textAnnotation id="TextAnnotation_09blatk">
+      <bpmn:text>status: not started</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:association id="Association_1aklo13" sourceRef="DataStoreReference_01zp803" targetRef="TextAnnotation_1cowmff" />
-    <bpmn:association id="Association_000etz8" sourceRef="DataStoreReference_0jm4ae6" targetRef="TextAnnotation_1rqnn1k" />
-    <bpmn:association id="Association_1j7hftg" sourceRef="se_acceptoffer" targetRef="TextAnnotation_1z0o8j8" />
-    <bpmn:association id="Association_0am36ta" sourceRef="t_determinetoolsetc" targetRef="TextAnnotation_1kp6gxa" />
-    <bpmn:association id="Association_1nz7img" sourceRef="t_determinetoolsetc" targetRef="TextAnnotation_17a5k94" />
-    <bpmn:association id="Association_0vnjdxj" sourceRef="t_requestcandidateinfo" targetRef="TextAnnotation_1lhq6w8" />
-    <bpmn:association id="Association_145ftiu" sourceRef="t_requestcandidateinfo" targetRef="TextAnnotation_0ju36ge" />
-    <bpmn:association id="Association_0bexskd" sourceRef="T_candidateinfoavail" targetRef="TextAnnotation_1tcn153" />
-    <bpmn:association id="Association_1bb750q" sourceRef="T_candidateinfoavail" targetRef="TextAnnotation_1fxxk09" />
-    <bpmn:association id="Association_0xdsnzz" sourceRef="T_candidateinfoavail" targetRef="TextAnnotation_04cas0y" />
-    <bpmn:association id="Association_0deenst" sourceRef="t_setuplogins" targetRef="TextAnnotation_1r38c9q" />
-    <bpmn:association id="Association_164630c" sourceRef="t_setuplogins" targetRef="TextAnnotation_1rta0hf" />
-    <bpmn:association id="Association_0y85gz0" sourceRef="t_setuplogins" targetRef="TextAnnotation_0v2jesj" />
-    <bpmn:association id="Association_0isxnng" sourceRef="t_setuplogins" targetRef="TextAnnotation_11hzvmd" />
-    <bpmn:association id="Association_0lvp2in" sourceRef="t_setuplogins" targetRef="TextAnnotation_1scfjfq" />
-    <bpmn:association id="Association_06yqyap" sourceRef="t_allocateequipment" targetRef="TextAnnotation_1un2vhi" />
-    <bpmn:association id="Association_1tzpwnp" sourceRef="t_allocateequipment" targetRef="TextAnnotation_0w61ck9" />
-    <bpmn:association id="Association_0faynky" sourceRef="t_setuphwsw" targetRef="TextAnnotation_0v072vp" />
-    <bpmn:association id="Association_0xn2p1o" sourceRef="t_setuphwsw" targetRef="TextAnnotation_01g3bdo" />
-    <bpmn:association id="Association_0su00bp" sourceRef="t_planningonboarding" targetRef="TextAnnotation_0trr9b0" />
-    <bpmn:association id="Association_0vakniz" sourceRef="t_planningonboarding" targetRef="TextAnnotation_1lbgdce" />
-    <bpmn:association id="Association_07ntiff" sourceRef="t_planningonboarding" targetRef="TextAnnotation_038hw76" />
-    <bpmn:association id="Association_02rafrv" sourceRef="t_scheduleresources" targetRef="TextAnnotation_1uwb7ha" />
-    <bpmn:association id="Association_1rz42q3" sourceRef="t_scheduleresources" targetRef="TextAnnotation_0i8bfiu" />
-    <bpmn:association id="Association_03d92wk" sourceRef="t_scheduleresources" targetRef="TextAnnotation_1byd62i" />
-    <bpmn:association id="Association_1sjbfwz" sourceRef="t_sendscheduletocandidate" targetRef="TextAnnotation_16ijaq3" />
-    <bpmn:association id="Association_1xc3vwp" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_0pef0yr" />
-    <bpmn:association id="Association_0x0naue" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_0cl4e5g" />
-    <bpmn:association id="Association_1cl7guo" sourceRef="t_preparedocumentation" targetRef="TextAnnotation_09blatk" />
-    <bpmn:association id="Association_1svjkju" sourceRef="t_senddocumentstodepartment" targetRef="TextAnnotation_134vo50" />
-    <bpmn:association id="Association_0pjw98c" sourceRef="Task_1g8kpy2" targetRef="TextAnnotation_1cr4id1" />
+    <bpmn:textAnnotation id="TextAnnotation_0v072vp">
+      <bpmn:text>I: software checklist (electronic) from 4 tasks before</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0cl4e5g">
+      <bpmn:text>i: trigger</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0pef0yr">
+      <bpmn:text>o: Non-Disclosure Agreements, Mission / Vision, General Information</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0i8bfiu">
+      <bpmn:text>schedule (places, times, resp. personel) , mail adress candidate</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1uwb7ha">
+      <bpmn:text>i: required personel, candidate mail-adress, start date and time, duration of meeting</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_038hw76">
+      <bpmn:text>o: required person, amount of time</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1lbgdce">
+      <bpmn:text>i: start date and time, department, position</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0v2jesj">
+      <bpmn:text>o: login &amp; password</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1rta0hf">
+      <bpmn:text>I: core data (name, employee id)</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_01g3bdo">
+      <bpmn:text>O: checklist filled in</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0w61ck9">
+      <bpmn:text>O: checklist filled in</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1un2vhi">
+      <bpmn:text>I: tools from 3 steps before = checklist (electronic)</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_11hzvmd">
+      <bpmn:text>status: template für passwort und mail-adressenerstellung aufgrund namen erstellt</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_134vo50">
+      <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_16ijaq3">
+      <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1r38c9q">
+      <bpmn:text>based on the core data, logins can be created</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_04cas0y">
+      <bpmn:text>status: nur verbindung zu bot fehlt noch</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0ju36ge">
+      <bpmn:text>status: template für e-mail senden schon aufgesetzt</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1fxxk09">
+      <bpmn:text>i: name, surname, date of birth, nat, sex, civil status, adress, country, e-mail, phone number, social sec number, no of kids, name of bank, bank account (IBAN)</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_17a5k94">
+      <bpmn:text>O: software, tools, access rights, work place</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1kp6gxa">
+      <bpmn:text>I: department, position, responsibilities</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1lhq6w8">
+      <bpmn:text>i: link</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1tcn153">
+      <bpmn:text>Candidate fills core data form online</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1z0o8j8">
+      <bpmn:text>definition of input stuff and setup of fake excel sheet =&gt; DB als input modellieren?</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1rqnn1k">
+      <bpmn:text>which one? name?</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1cowmff">
+      <bpmn:text>name?</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:process>
+  <bpmn:message id="Message_1rcg06y" name="ghd" />
+  <bpmn:message id="Message_02a0usy" name="hhh" />
+  <bpmn:message id="Message_14h3grn" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1cm6lc7">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="onboarding_process_kander">
       <bpmndi:BPMNShape id="Participant_133laiz_di" bpmnElement="Participant_133laiz" isHorizontal="true">
         <dc:Bounds x="152" y="200" width="3054" height="699" />
       </bpmndi:BPMNShape>
@@ -745,7 +804,7 @@
         <di:waypoint x="1243" y="505" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_1cowmff_di" bpmnElement="TextAnnotation_1cowmff" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
-        <dc:Bounds x="1250" y="360" width="99.99274099883856" height="25.551684088269454" />
+        <dc:Bounds x="1250" y="360" width="100" height="26" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_1aklo13_di" bpmnElement="Association_1aklo13" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
         <di:waypoint x="1239" y="455" />
@@ -763,18 +822,12 @@
         <di:waypoint x="2131" y="395" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_1rqnn1k_di" bpmnElement="TextAnnotation_1rqnn1k" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
-        <dc:Bounds x="2030" y="280" width="99.99274099883856" height="39.48896631823461" />
+        <dc:Bounds x="2030" y="280" width="100" height="39" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_000etz8_di" bpmnElement="Association_000etz8" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
         <di:waypoint x="2098" y="345" />
         <di:waypoint x="2088" y="319" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="StartEvent_0fd3het_di" bpmnElement="se_acceptoffer" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
-        <dc:Bounds x="222" y="508" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="210" y="551" width="62" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0n3o4dg_di" bpmnElement="SequenceFlow_0n3o4dg">
         <di:waypoint x="420" y="526" />
         <di:waypoint x="486" y="526" />
@@ -791,6 +844,12 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_08vmbw5_di" bpmnElement="Task_0ybfk7q" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
         <dc:Bounds x="320" y="486" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0vgvpk9_di" bpmnElement="se_acceptoffer" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
+        <dc:Bounds x="222" y="508" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="210" y="551" width="62" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
