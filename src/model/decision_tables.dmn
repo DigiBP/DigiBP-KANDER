@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1yy83to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1yy83to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.4.1">
   <decision id="determine_software_tools" name="Dermine Software, Tools, Access Right">
     <extensionElements>
       <biodi:bounds x="150" y="81" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable_1">
-      <input id="input_1">
+      <input id="input_1" label="Name">
         <inputExpression id="inputExpression_1" typeRef="string">
-          <text></text>
+          <text>Name</text>
         </inputExpression>
       </input>
-      <output id="output_1" typeRef="string" />
+      <output id="output_1" label="CRM" name="CRM" typeRef="boolean" />
+      <output id="OutputClause_1o9khh9" label="ERP" name="ERP" typeRef="boolean" />
+      <output id="OutputClause_0y2mcs2" label="Mail" name="Mail" typeRef="boolean" />
+      <output id="OutputClause_1ad525r" label="Server" name="Server" typeRef="boolean" />
+      <output id="OutputClause_030i2ob" label="CAD Software" name="CADSoftware" typeRef="boolean" />
+      <output id="OutputClause_14a4r1z" label="Microsoft Office" name="MicrosoftOffice" typeRef="boolean" />
+      <output id="OutputClause_069dvnh" label="Adobe Acrobat" name="AdobeAcrobat" typeRef="boolean" />
+      <rule id="DecisionRule_0skb378">
+        <inputEntry id="UnaryTests_1e0j0tr">
+          <text>"Ramona"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gq3ucq">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e4vsa9">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1syp76w">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mzid1j">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l6fjp9">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h25ckf">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qhdoda">
+          <text>true</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="determine_onboarding_schedule" name="Determine Onboarding Schedule">
