@@ -1,46 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1yy83to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.4.1">
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1yy83to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
   <decision id="determine_software_tools" name="Dermine Software, Tools, Access Right">
     <extensionElements>
       <biodi:bounds x="150" y="81" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable_1">
-      <input id="input_1" label="Name">
+      <input id="input_1" label="Position">
         <inputExpression id="inputExpression_1" typeRef="string">
-          <text>Name</text>
+          <text>Position</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="CRM" name="CRM" typeRef="boolean" />
-      <output id="OutputClause_1o9khh9" label="ERP" name="ERP" typeRef="boolean" />
-      <output id="OutputClause_0y2mcs2" label="Mail" name="Mail" typeRef="boolean" />
-      <output id="OutputClause_1ad525r" label="Server" name="Server" typeRef="boolean" />
-      <output id="OutputClause_030i2ob" label="CAD Software" name="CADSoftware" typeRef="boolean" />
-      <output id="OutputClause_14a4r1z" label="Microsoft Office" name="MicrosoftOffice" typeRef="boolean" />
-      <output id="OutputClause_069dvnh" label="Adobe Acrobat" name="AdobeAcrobat" typeRef="boolean" />
+      <output id="output_1" label="CRM" name="CRM" typeRef="string">
+        <outputValues id="UnaryTests_1tgi2iw">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1o9khh9" label="ERP" name="ERP" typeRef="string">
+        <outputValues id="UnaryTests_1kthr3k">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0y2mcs2" label="Mail" name="Mail" typeRef="string">
+        <outputValues id="UnaryTests_1updugj">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1ad525r" label="Server" name="Server" typeRef="string">
+        <outputValues id="UnaryTests_1bib7lb">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_030i2ob" label="CAD Software" name="CADSoftware" typeRef="string">
+        <outputValues id="UnaryTests_0omam69">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_14a4r1z" label="Microsoft Office" name="MicrosoftOffice" typeRef="string">
+        <outputValues id="UnaryTests_0pfm1ko">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_069dvnh" label="Adobe Acrobat" name="AdobeAcrobat" typeRef="string">
+        <outputValues id="UnaryTests_1sscksv">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
       <rule id="DecisionRule_0skb378">
         <inputEntry id="UnaryTests_1e0j0tr">
-          <text>"Ramona"</text>
+          <text>"production"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1gq3ucq">
-          <text>true</text>
+          <text>"False"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0e4vsa9">
-          <text>false</text>
+          <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1syp76w">
-          <text>false</text>
+          <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mzid1j">
-          <text>false</text>
+          <text>"False"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l6fjp9">
-          <text>true</text>
+          <text>"False"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1h25ckf">
-          <text>false</text>
+          <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qhdoda">
-          <text>true</text>
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qa0mcr">
+        <inputEntry id="UnaryTests_0aiat2o">
+          <text>"r_and_d"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00ggqx9">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h58gg3">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lmcnh2">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07giuub">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yc3gvq">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oxyk5g">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18id6fa">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tdr42t">
+        <inputEntry id="UnaryTests_0i8pcg4">
+          <text>"it"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ir0pn3">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19bu4y1">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_157t8k6">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fwo78z">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tlb92u">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r1s2rb">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07tchij">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_154fejb">
+        <inputEntry id="UnaryTests_0zj3r15">
+          <text>"qm"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05gdlgj">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0beqvxw">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sr4m92">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11fsdvf">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nvqr70">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0502e50">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01hph40">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12pttw3">
+        <inputEntry id="UnaryTests_0ilcuhh">
+          <text>"management"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gxsi7v">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g3nwr7">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gc0qh0">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hevhxq">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hrjyy9">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12vpypm">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08cdzu0">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1amiwkt">
+        <inputEntry id="UnaryTests_1bvfw0z">
+          <text>"hr"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pe918l">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12gccjz">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14zpczf">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tbt5rq">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ls5ql3">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09rci2g">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mitf58">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mshtkk">
+        <inputEntry id="UnaryTests_0z69341">
+          <text>"backoffice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18nlaig">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o7ks0a">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e5teqp">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04tu0vh">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ttybzu">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0poja1y">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xqerkh">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sdqtdj">
+        <inputEntry id="UnaryTests_0f3qzzv">
+          <text>"sales"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a684yj">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gsh8gw">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_183oyt6">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0duaaab">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vp3hao">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_114ebna">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o7ud3i">
+          <text>"True"</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -50,10 +260,167 @@
       <biodi:bounds x="379" y="82" width="180" height="80" />
     </extensionElements>
     <decisionTable id="DecisionTable_0ar0ufj">
-      <input id="InputClause_0jae07w">
-        <inputExpression id="LiteralExpression_04cvzm3" typeRef="string" />
+      <input id="InputClause_0jae07w" label="Position">
+        <inputExpression id="LiteralExpression_04cvzm3" typeRef="string">
+          <text>Position</text>
+        </inputExpression>
       </input>
-      <output id="OutputClause_1szrzt2" typeRef="string" />
+      <output id="OutputClause_1szrzt2" label="Welcome" name="Welcome" typeRef="string">
+        <outputValues id="UnaryTests_0wnfvds">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_08mncn4" label="Company Tour Workplace Obtainment" name="CompanyTourWorkplaceObtainment" typeRef="string">
+        <outputValues id="UnaryTests_0c3bj8y">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0sn2crx" label="Safety Training" name="SafetyTraining" typeRef="string">
+        <outputValues id="UnaryTests_0cxiooj">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0pjcnru" label="IT System Introduction" name="ITSystemIntroduction" typeRef="string">
+        <outputValues id="UnaryTests_0szjq6w">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0tjyoej">
+        <inputEntry id="UnaryTests_03nmzhy">
+          <text>"production"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yvtajl">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k4qe1z">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ngaij8">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r43czp">
+          <text>"False"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oknr0g">
+        <inputEntry id="UnaryTests_1bkx58y">
+          <text>"r_and_d"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h8h8xr">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bj7g7n">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06vx2zm">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e7rccl">
+          <text>"False"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1o6pccs">
+        <inputEntry id="UnaryTests_0px3h0v">
+          <text>"it"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0opk1rj">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zsq499">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ft0a77">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07bvk0y">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wjbd4i">
+        <inputEntry id="UnaryTests_1xnon4h">
+          <text>"qm"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a9tvv8">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14w7r2r">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cezcie">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t0039b">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dlkao6">
+        <inputEntry id="UnaryTests_1qsz8ok">
+          <text>"management"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iffmt0">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xsymz4">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_188ru26">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jz6sgc">
+          <text>"True"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uem7qd">
+        <inputEntry id="UnaryTests_1poier4">
+          <text>"hr"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lsint6">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07rtnej">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h1q19y">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1maly84">
+          <text>"False"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_060xrdn">
+        <inputEntry id="UnaryTests_1iauund">
+          <text>"backoffice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1okpp23">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ezhvil">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rqdzej">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ryqetn">
+          <text>"False"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bz2tlj">
+        <inputEntry id="UnaryTests_17cysay">
+          <text>"sales"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ab51g7">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_179p27i">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1thobcl">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z5kt5s">
+          <text>"False"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
 </definitions>
