@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1yy83to" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
-  <decision id="determine_software_tools" name="Dermine Software, Tools, Access Right">
+  <decision id="determine_software_tools" name="Determine Software, Access Rights and Equipment">
     <extensionElements>
       <biodi:bounds x="150" y="81" width="180" height="80" />
     </extensionElements>
@@ -45,6 +45,21 @@
           <text>"True","False"</text>
         </outputValues>
       </output>
+      <output id="OutputClause_1fdmn97" label="Desktop PC" name="DesktopPC" typeRef="string">
+        <outputValues id="UnaryTests_0x8nytw">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0gf9epm" label="Mobile Phone" name="MobilePhone" typeRef="string">
+        <outputValues id="UnaryTests_104tvd9">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0etwha8" label="Stationary Phone" name="StationaryPhone" typeRef="string">
+        <outputValues id="UnaryTests_1jalu4b">
+          <text>"True","False"</text>
+        </outputValues>
+      </output>
       <rule id="DecisionRule_0skb378">
         <inputEntry id="UnaryTests_1e0j0tr">
           <text>"production"</text>
@@ -68,6 +83,15 @@
           <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qhdoda">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wnaiwr">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fk24cu">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m7c2am">
           <text>"True"</text>
         </outputEntry>
       </rule>
@@ -96,6 +120,15 @@
         <outputEntry id="LiteralExpression_18id6fa">
           <text>"True"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0jgmc7b">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1txmlam">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0soc2ll">
+          <text>"True"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0tdr42t">
         <inputEntry id="UnaryTests_0i8pcg4">
@@ -120,6 +153,15 @@
           <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07tchij">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uexw62">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0570cot">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hqzxbb">
           <text>"True"</text>
         </outputEntry>
       </rule>
@@ -148,6 +190,15 @@
         <outputEntry id="LiteralExpression_01hph40">
           <text>"True"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0dgb17n">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pqet87">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rkbtkb">
+          <text>"True"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_12pttw3">
         <inputEntry id="UnaryTests_0ilcuhh">
@@ -172,6 +223,15 @@
           <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08cdzu0">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bm834p">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0butvol">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ijnaqs">
           <text>"True"</text>
         </outputEntry>
       </rule>
@@ -200,6 +260,15 @@
         <outputEntry id="LiteralExpression_0mitf58">
           <text>"True"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_00x9opj">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ke9btq">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0msrad2">
+          <text>"True"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0mshtkk">
         <inputEntry id="UnaryTests_0z69341">
@@ -224,6 +293,15 @@
           <text>"True"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xqerkh">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k2j5wc">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1428lgw">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01ns6dg">
           <text>"True"</text>
         </outputEntry>
       </rule>
@@ -251,6 +329,15 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0o7ud3i">
           <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ni9gga">
+          <text>"False"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x86zhk">
+          <text>"True"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a396q2">
+          <text>"False"</text>
         </outputEntry>
       </rule>
     </decisionTable>
