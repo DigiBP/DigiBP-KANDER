@@ -4,4 +4,3 @@
 We are happy to see you here - you will find more information on our [wiki pages](https://github.com/DigiBP/DigiBP-KANDER/wiki).
 
 Your kander team
-![1](https://github.com/DigiBP/DigiBP-KANDER/issues/6#issue-534431815)
