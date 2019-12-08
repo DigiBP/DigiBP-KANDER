@@ -46,7 +46,7 @@
         <bpmn:flowNodeRef>EndEvent_0oahi59</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:userTask id="t_allocateequipment" name="Allocate equipment">
+    <bpmn:userTask id="t_allocateequipment" name="Allocate equipment" camunda:candidateGroups="IT">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="NeededEquipment" label="Needed Equipment" type="string" defaultValue="Desktop PC: ${DesktopPC}, Mobile Phone: ${MobilePhone}, Stationary Phone: ${StationaryPhone}">
@@ -63,7 +63,7 @@
       <bpmn:incoming>SequenceFlow_0xs3a00</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1v9j33b</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:userTask id="t_setupkeycard" name="Set up Key Card">
+    <bpmn:userTask id="t_setupkeycard" name="Set up Key Card" camunda:candidateGroups="IT">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="NewEmployeeName" label="New Employee Name" type="string" defaultValue="${Name}">
@@ -86,7 +86,7 @@
       <bpmn:incoming>SequenceFlow_0f274xm</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_09o42j8</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="t_setuphwsw" name="Set up Hardware  and Software">
+    <bpmn:userTask id="t_setuphwsw" name="Set up Hardware  and Software" camunda:candidateGroups="IT">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="NeededSoftware" label="Needed Software" type="string" defaultValue="CAD Software: ${CADSoftware}, Microsoft Office: ${MicrosoftOffice}, Adobe Acrobat: ${AdobeAcrobat}">
@@ -150,7 +150,7 @@
     <bpmn:endEvent id="ee_endonboarding" name="End Preboarding">
       <bpmn:incoming>SequenceFlow_1f4fzj5</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="t_setupworkplace" name="Set up Workplace">
+    <bpmn:userTask id="t_setupworkplace" name="Set up Workplace" camunda:candidateGroups="Department">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="Equipment" label="Equipment" type="string" defaultValue="Place equipment on desk of new employee">
@@ -478,7 +478,7 @@ WelcomeEnd=object.WelcomeEnd;</camunda:script>
       <bpmn:outgoing>SequenceFlow_0dn4qt1</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_1umh84i" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:userTask id="UserTask_1wknvmx" name="Manually Correct Input Data">
+    <bpmn:userTask id="UserTask_1wknvmx" name="Manually Correct Input Data" camunda:candidateGroups="HRM">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="Instructions1" label="Instructions" type="string" defaultValue="Compare entered names and mail adresses. If similar confirm with &#39;True&#39;." />
@@ -504,7 +504,7 @@ WelcomeEnd=object.WelcomeEnd;</camunda:script>
       <bpmn:outgoing>SequenceFlow_0iqo6tv</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_165or4g</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Task_026twqu" name="Restart Process">
+    <bpmn:userTask id="Task_026twqu" name="Restart Process" camunda:candidateGroups="HRM">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="Instructions3" label="Instructions" type="string" defaultValue="Confirm this task and then restart &#39;kander_preboarding_process&#39;.">
@@ -576,10 +576,6 @@ Stationary Phone</bpmn:text>
     <bpmn:textAnnotation id="TextAnnotation_1pddjfj">
       <bpmn:text>Install the needed Software</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0trr9b0">
-      <bpmn:text>Welcome, Company Tour, Safety Training,
-IT Introduction</bpmn:text>
-    </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_1t00njo">
       <bpmn:text>Flow continues if the answer of the chatbot is correct (identity confirmed). Otherwise the process needs to be restarted.</bpmn:text>
     </bpmn:textAnnotation>
@@ -606,6 +602,10 @@ Info from Input Form Fields</bpmn:text>
     <bpmn:association id="Association_0su00bp" sourceRef="t_planningonboarding" targetRef="TextAnnotation_0trr9b0" />
     <bpmn:association id="Association_1j7hftg" sourceRef="se_acceptoffer" targetRef="TextAnnotation_1z0o8j8" />
     <bpmn:association id="Association_1x1szyc" sourceRef="se_acceptoffer" targetRef="TextAnnotation_1mgdaf0" />
+    <bpmn:textAnnotation id="TextAnnotation_0trr9b0">
+      <bpmn:text>Welcome, Company Tour, Safety Training,
+IT Introduction</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:process>
   <bpmn:message id="Message_1umh84i" name="Chatbot_Answer_received" />
   <bpmn:message id="Message_1u1rqz4" name="Re_Request_Info" />
@@ -643,11 +643,11 @@ Info from Input Form Fields</bpmn:text>
         <di:waypoint x="643" y="273" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0trr9b0_di" bpmnElement="TextAnnotation_0trr9b0">
-        <dc:Bounds x="2004" y="576" width="100" height="69" />
+        <dc:Bounds x="1980" y="515" width="100" height="69" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0su00bp_di" bpmnElement="Association_0su00bp">
-        <di:waypoint x="2056" y="616" />
-        <di:waypoint x="2073" y="645" />
+        <di:waypoint x="2061" y="616" />
+        <di:waypoint x="2045" y="584" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_04ngdd3_di" bpmnElement="MessageFlow_04ngdd3">
         <di:waypoint x="2499" y="616" />
