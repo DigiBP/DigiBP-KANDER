@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0cl7id8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0cl7id8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
   <bpmn:collaboration id="Collaboration_1cm6lc7">
     <bpmn:participant id="Participant_133laiz" name="Kander - Preboarding Process" processRef="Process_0771ici" />
     <bpmn:participant id="Participant_0th5c8f" name="Candidate / New Employee" />
@@ -147,7 +147,7 @@
     <bpmn:dataObject id="DataObject_0c5f4jj" />
     <bpmn:dataObjectReference id="DataObjectReference_1pwtewl" name="New Employee Dossier" dataObjectRef="DataObject_05c2c2s" />
     <bpmn:dataObject id="DataObject_05c2c2s" />
-    <bpmn:startEvent id="se_" name="Accept Offer">
+    <bpmn:startEvent id="se_" name="Start Preboarding">
       <bpmn:outgoing>SequenceFlow_1hzhsmk</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:userTask id="Task_1u3fmue" name="Store Basic Candidate Information">
@@ -199,7 +199,7 @@
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="se_">
         <dc:Bounds x="245" y="288" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="232" y="331" width="62" height="14" />
+          <dc:Bounds x="220" y="331" width="87" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_05qa9qx_di" bpmnElement="Lane_05qa9qx" isHorizontal="true" bioc:stroke="rgb(251, 140, 0)" bioc:fill="rgb(255, 224, 178)">
