@@ -97,7 +97,7 @@
       <bpmn:incoming>SequenceFlow_0d4lfzq</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0a54heg</bpmn:outgoing>
     </bpmn:receiveTask>
-    <bpmn:endEvent id="e_endonboarding" name="End Onboarding">
+    <bpmn:endEvent id="e_endonboarding" name="End Preboarding">
       <bpmn:incoming>SequenceFlow_1f4fzj5</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:parallelGateway id="ExclusiveGateway_0ea1nay">
@@ -228,7 +228,7 @@
       <bpmndi:BPMNShape id="EndEvent_12tmr3q_di" bpmnElement="e_endonboarding">
         <dc:Bounds x="2917" y="728" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2895" y="771" width="81" height="14" />
+          <dc:Bounds x="2894" y="771" width="83" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1f4fzj5_di" bpmnElement="SequenceFlow_1f4fzj5">
