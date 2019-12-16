@@ -10,8 +10,7 @@ You can find further information on the wiki pages linked below: <br/>
 [2.2 Part 2](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.2-Part-2) <br/>
 [2.3 Part 3](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.3-Part-3) <br/>
 [2.4 Part 4](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.4-Part-4) <br/>
-[3. Summary](https://github.com/DigiBP/DigiBP-KANDER/wiki/3.-Summary) <br/>
-[4. Conclusion](https://github.com/DigiBP/DigiBP-KANDER/wiki/4.-Conclusion) <br/>
+[3. Conclusion](https://github.com/DigiBP/DigiBP-KANDER/wiki/3.-Conclusion) <br/>
 
 ### Contact 
 kander <br/>
