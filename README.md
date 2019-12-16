@@ -4,8 +4,8 @@
 
 You can find further information on the wiki pages linked below: <br/>
 
-[1. Introduction](https://github.com/DigiBP/DigiBP-KANDER/wiki/1.-Introduction-kander) <br/>
-[2. Process Overview](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.-Process-Overviews-of------------As-Is-&-To-Be) <br/>
+[1. Introduction](https://github.com/DigiBP/DigiBP-KANDER/wiki/1.-Introduction) <br/>
+[2. Process Overview](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.-Process-Overviews) <br/>
 [2.1 Part 1](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.1-Part-1) <br/>
 [2.2 Part 2](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.2-Part-2) <br/>
 [2.3 Part 3](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.3-Part-3) <br/>
