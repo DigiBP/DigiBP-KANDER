@@ -4,13 +4,14 @@
 
 You can find further information on the wiki pages linked below: <br/>
 
-[1 kander introduction](https://github.com/DigiBP/DigiBP-KANDER/wiki/1-kander-introduction) <br/>
-[2 kander as is process](https://github.com/DigiBP/DigiBP-KANDER/wiki/2-kander-as-is-process) <br/>
-[3 kander to be process](https://github.com/DigiBP/DigiBP-KANDER/wiki/3-kander-to-be-process) <br/>
-[4 kander conclusion](https://github.com/DigiBP/DigiBP-KANDER/wiki/4-kander-conclusion) <br/>
-
-### Links
-[Running Heroku Instance](https://digibp-kander.herokuapp.com)
+[1. Introduction](https://github.com/DigiBP/DigiBP-KANDER/wiki/1.-Introduction-kander) <br/>
+[2. Process Overview](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.-Process-Overviews-of------------As-Is-&-To-Be) <br/>
+[2.1 Part 1](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.1-Part-1) <br/>
+[2.2 Part 2](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.2-Part-2)
+[2.3 Part 3](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.3-Part-3)
+[2.4 Part 4](https://github.com/DigiBP/DigiBP-KANDER/wiki/2.4-Part-4)
+[3. Summary](https://github.com/DigiBP/DigiBP-KANDER/wiki/3.-Summary)
+[4. Conclusion](https://github.com/DigiBP/DigiBP-KANDER/wiki/4.-Conclusion) <br/>
 
 ### Contact 
 kander <br/>
